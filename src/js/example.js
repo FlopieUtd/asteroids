@@ -625,7 +625,7 @@ function updateAsteroids() {
     else if (a.pos.getY() < -a.radius) a.pos.setY(screen.height + a.radius);
   }
 
-  if (asteroids.length < 5) {
+  if (asteroids.length < 3) {
     var factor = (Math.random() * 2) >> 0;
 
     generateAsteroid(screen.width * factor, screen.height * factor, 60, "b");

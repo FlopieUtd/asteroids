@@ -1,10 +1,11 @@
 const path = require("path");
+
 module.exports = {
   entry: "./src/index.js",
   output: {
     filename: "main.js",
-    path: path.resolve(__dirname, "dist"),
-    publicPath: `${path.resolve(__dirname, "dist")}/`
+    path: `${path.resolve(__dirname)}/dist`,
+    publicPath: `${path.resolve(__dirname)}/test2`
   },
   module: {
     rules: [
@@ -20,7 +21,7 @@ module.exports = {
   },
   devServer: {
     port: 9000,
-    contentBase: path.resolve(__dirname)
+    contentBase: `${path.resolve(__dirname)}/`
   },
   node: {
     __dirname: false,

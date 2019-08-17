@@ -16,7 +16,7 @@ export const generateAsteroid = (x, y, radius, size) => {
     size,
     rotation: ((Math.random() - 0.5) / (radius / 2) ** 3) * 25
   });
-  state.asteroidVelocity += 0.0025;
+  state.asteroidVelocity += 0.004;
 };
 
 export const updateAsteroids = () => {

@@ -70,7 +70,7 @@ const detectUpgradeCollisions = () => {
       }
       if (upgrade.type === "atom") {
         console.log("time dilated!", state.asteroidVelocity);
-        state.asteroidVelocity -= 0.25;
+        state.asteroidVelocity -= 0.15;
         if (state.asteroidVelocity < 1) {
           state.asteroidVelocity = 1;
         }

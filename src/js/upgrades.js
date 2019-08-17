@@ -1,11 +1,5 @@
 import { screen, state } from "./state";
-import {
-  bulletIcon,
-  atomIcon,
-  shieldIcon,
-  shotgunIcon,
-  context
-} from "./consts";
+import { bulletIcon, atomIcon, shieldIcon, context } from "./consts";
 import { add, multiply, portalize } from "./utils";
 
 export const generateUpgrade = asteroid => {
@@ -37,7 +31,7 @@ export const generateUpgrade = asteroid => {
   }
   if (chance > 0.75) {
     upgrade.type = "shotgun";
-    upgrade.icon = shotgunIcon;
+    upgrade.icon = shieldIcon;
   }
 
   state.upgrades[id] = upgrade;

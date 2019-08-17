@@ -7,13 +7,13 @@ export const body = document.querySelector("body");
 export const iconSize = 25;
 export const minBulletSpeed = 24;
 export const maxBulletSpeed = 6;
-export const chanceOfUpgrade = 0.15;
+export const chanceOfUpgrade = 0.2;
 export const canvas = document.getElementById("canvas");
 export const context = canvas.getContext("2d");
 export const pointsSpan = document.getElementById("points");
 export const shieldTrack = document.getElementById("shield-track");
 export const shieldBar = document.getElementById("shield-bar");
-export const newAsteroidEveryNSeconds = 20;
+export const newAsteroidEveryNSeconds = 16;
 
 canvas.width = body.clientWidth;
 canvas.height = body.clientHeight;
