@@ -11,16 +11,33 @@ body {
   font-family: monospace;
 }
 
-.points-wrapper {
+.score-wrapper {
   color: white;
   right: 0;
   top: 0;
   position: absolute;
   padding: 1em;
   font-size: 16px;
+  text-transform: uppercase;
 }
 
-#shield-track {
+.notice-wrapper {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  bottom: 75px;
+}
+
+.notice {
+  color: white;
+  text-transform: uppercase;
+  font-size: 24px;
+  transition: all 0.25s ease;
+  opacity: 0;
+}
+
+.shield-track {
   height: 10px;
   width: 400px;
   background: #181818;
@@ -34,7 +51,7 @@ body {
   transition: opacity 0.2s linear;
 }
 
-#shield-bar {
+.shield-bar {
   position: relative;
   width: 100%;
   background: magenta;

@@ -5,15 +5,17 @@ import buckshotPNG from "../images/buckshot.png";
 
 export const body = document.querySelector("body");
 export const iconSize = 25;
-export const minBulletSpeed = 24;
+export const minBulletSpeed = 32;
 export const maxBulletSpeed = 6;
-export const chanceOfUpgrade = 0.2;
-export const canvas = document.getElementById("canvas");
+export const chanceOfUpgrade = 0.15;
+export const newAsteroidEveryNSeconds = 20;
+
+export const canvas = document.querySelector(".canvas");
 export const context = canvas.getContext("2d");
-export const pointsSpan = document.getElementById("points");
-export const shieldTrack = document.getElementById("shield-track");
-export const shieldBar = document.getElementById("shield-bar");
-export const newAsteroidEveryNSeconds = 16;
+export const scoreSpan = document.querySelector(".score");
+export const shieldTrack = document.querySelector(".shield-track");
+export const shieldBar = document.querySelector(".shield-bar");
+export const notice = document.querySelector(".notice");
 
 canvas.width = body.clientWidth;
 canvas.height = body.clientHeight;

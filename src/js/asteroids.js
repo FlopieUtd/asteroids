@@ -23,20 +23,24 @@ export const updateAsteroids = () => {
   state.asteroids.forEach(asteroid => {
     add(asteroid.position, asteroid.velocity);
     portalize(asteroid, screen.width, screen.height);
-    // eslint-disable-next-line
-    asteroid.angle = asteroid.angle + asteroid.rotation;
+    asteroid.angle += asteroid.rotation;
   });
 
   if (
     state.asteroids.filter(asteroid =>
       ["big", "medium"].includes(asteroid.size)
-    ).length < 5
+    ).length < 4
   ) {
     generateAsteroid(0, 0, 50, "big");
   }
 
   state.newAsteroidIn -= 1;
-  if (state.newAsteroidIn < 1) {
+  if (
+    state.newAsteroidIn < 1 &&
+    state.asteroids.filter(asteroid =>
+      ["big", "medium"].includes(asteroid.size)
+    ).length < 12
+  ) {
     state.newAsteroidIn = 60 * newAsteroidEveryNSeconds;
     generateAsteroid(0, 0, 50, "big");
   }
@@ -93,7 +97,7 @@ export const destroyAsteroid = asteroid => {
     }
   }
   if (asteroid.size === "small") {
-    state.points += 100;
+    state.score += 100;
     if (Math.random() > 1 - chanceOfUpgrade) {
       generateUpgrade(asteroid);
     }

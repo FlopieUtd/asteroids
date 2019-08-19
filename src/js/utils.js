@@ -1,3 +1,5 @@
+import { notice } from "./consts";
+
 export const getLength = vector =>
   Math.sqrt(vector.x * vector.x + vector.y * vector.y);
 
@@ -12,8 +14,8 @@ export const add = (receiver, vector) => {
 };
 
 export const multiply = (receiver, value) => {
-  receiver.x = receiver.x * value;
-  receiver.y = receiver.y * value;
+  receiver.x *= value;
+  receiver.y *= value;
 };
 
 export const portalize = (entity, screenWidth, screenHeight) => {
@@ -31,11 +33,13 @@ export const portalize = (entity, screenWidth, screenHeight) => {
   }
 };
 
-export const isColliding = (a, b) => {
-  const vector = {
-    x: a.position.x - b.position.x,
-    y: a.position.y - b.position.y
-  };
+export const notify = message => {
+  notice.innerHTML = message;
+  notice.style.opacity = 1;
+  notice.style.transform = "translateY(-10px)";
 
-  return getLength(vector) < a.radius + b.radius;
+  setTimeout(() => {
+    notice.style.opacity = 0;
+    notice.style.transform = "translateY(0px)";
+  }, 2500);
 };

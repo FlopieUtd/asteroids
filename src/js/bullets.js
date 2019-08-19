@@ -11,7 +11,7 @@ export const generateBullets = () => {
           x: state.ship.position.x,
           y: state.ship.position.y
         },
-        velocity: setLength(12, state.ship.angle + (-1 + i) / 20),
+        velocity: setLength(12, state.ship.angle + (-1 + i) / 15),
         radius: 1
       });
     }

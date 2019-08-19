@@ -31,5 +31,5 @@ export const state = {
   bonuses: { shotgun: 0 },
   asteroidVelocity: 1,
   shield: 4,
-  points: 0
+  score: 0
 };
