@@ -33,13 +33,15 @@ export const portalize = (entity, screenWidth, screenHeight) => {
   }
 };
 
-export const notify = message => {
+export const notify = (message, fade = true) => {
   notice.innerHTML = message;
   notice.style.opacity = 1;
   notice.style.transform = "translateY(-10px)";
 
-  setTimeout(() => {
-    notice.style.opacity = 0;
-    notice.style.transform = "translateY(0px)";
-  }, 2500);
+  if (fade) {
+    setTimeout(() => {
+      notice.style.opacity = 0;
+      notice.style.transform = "translateY(0px)";
+    }, 2500);
+  }
 };

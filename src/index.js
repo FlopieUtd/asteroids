@@ -42,7 +42,7 @@ const loop = () => {
   detectCollisions();
   render();
   if (state.shield <= 0) {
-    notify(`game over! score: ${state.score}`);
+    notify(`game over! score: ${state.score}`, false);
   } else {
     window.requestAnimationFrame(loop);
   }
